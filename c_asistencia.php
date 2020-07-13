@@ -53,8 +53,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
             <div class="card card-dark card-outline card-tabs">
               <div class="card-header p-0 pt-1 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
@@ -74,7 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                      
                     <!-- DATATABLES -->
                     
-                    <div class="container">
+                    <div class="container-fluid">
                       <div class="row">
                         <div class="col-12">
                           
@@ -104,9 +104,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Modal asistencia -->
 	<div class="modal fade" id="modalAsistencia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-dark">
 					<h5 class="modal-title" id="exampleModalLabel">Compruebe Asistencia</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -115,23 +115,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<div class="modal-body">
 					<form id="frmAsistencia" >
           <input type="text" hidden="" id="iduser" name="id_user">
-						<label>Cedula</label>
-						<input type="text" class="form-control input-sm" id="ci" name="ci" style="font-size:18px;">
 						
             <div class="form-row">
-              <div class="form-group col-md-7">
+            <div class="form-group col-4 col-md-12">
+                <label>Cedula</label>
+						    <input type="text" class="form-control input-sm" id="ci" name="ci" readonly style="font-size:18px;">
+              </div>
+              <div class="form-group col-4 col-md-7">
                   <label>Fecha</label>
 						      <input type="date" class="form-control input-sm" id="fecha" name="fecha" style="font-size:18px;">
               </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-4 col-md-4">
                         <!--SELECT PERIODO-->
                           <div id="selectlista"></div>
                          
-                  </div>
-                  
-                </div>
+                  </div>    
+              </div>
+
             <div class="form-row">
-            <div class="form-group col-md-8">
+            <div class="form-group col-6 col-md-8">
                         <label for="inputState">Asistencia</label>
                         <select id="inputState" name="asistencia" class="form-control">
                           <option selected="">Elegir...</option>
@@ -139,7 +141,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <option value="0">NO</option>
                          </select>
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-6 col-md-4">
                         <label for="inputState">Causa</label>
                         <select id="inputState" name="causa" class="form-control">
                           <option selected="">*</option>
@@ -153,7 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>         
 					</form>
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer bg-dark">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 					<button type="button" class="btn btn-primary" id="btnRegistrar" style="color:white;">Aceptar</button>
 				</div>

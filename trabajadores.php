@@ -81,49 +81,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <form action="" id="frm" method="POST">
                     
                      <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-4 col-md-4">
                             <label for="inputEmail4">Nombre</label>
                             <input type="text" class="form-control" id="inputEmail" name="nombre" placeholder="Nombre">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-4 col-md-4">
                             <label for="inputPassword4">Apellido</label>
                             <input type="text" class="form-control" id="inputPassword4" name="apellido" placeholder="Apellido">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-4 col-md-4">
                               <label for="inputPassword4">Cédula</label>
                               <input type="text" class="form-control" id="inputPassw" name="ci" placeholder="Cédula">
                             </div>
                         </div>
               
                         <div class="form-row">
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-5 col-md-2">
                             <label for="inputEmail4">Telefono</label>
                             <input type="text" class="form-control" id="input4" name="tlf" placeholder="Telefono">
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-7 col-md-3">
                             <label for="inputPassword4">Cargo</label>
                             <input type="text" class="form-control" id="inpssword4" name="cargo" placeholder="Cargo">
                             </div>
-                            <div class="form-group col-md-7">
+                            <div class="form-group col-12 col-md-7">
                             <label for="inputPassword4">Dirección</label>
                             <input type="text" class="form-control" id="inputPasrd4" name="direccion" placeholder="Dirección">
                             </div>
                         </div>
                         
-                        <hr>
                         <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-4 col-md-4">
                             <label for="inputPassword4">Banco</label>
                             <input type="text" class="form-control" id="inputPrd4" name="banco" placeholder="Banco">
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-8 col-md-8">
                             <label for="inputPassword4">Nº de Cuenta</label>
                             <input type="text" class="form-control" id="inputPasswor4" name="n_cuenta" placeholder="NºCuenta">
                             </div>
                             
                         </div> 
-                        <button type="" id="btnRegistrar" class="btn btn-primary">Registrar</button>
                         </form>
+                        <div class="text-center">
+                          <button type="" id="btnRegistrar" class="btn btn-primary">Registrar</button>
+                        </div>
                         
                         </div>
                         <div class="col-2"></div>
@@ -136,7 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                      
                     <!-- DATATABLES -->
 
-                    <div class="container">
+                    <div class="container-fluid">
                       <div class="row">
                         <div class="col-12">
                           
@@ -181,9 +182,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- Modal editar -->
 <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-dark">
 					<h5 class="modal-title" id="exampleModalLabel">Actualizar Trabajador</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -193,47 +194,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <form action="" id="frmActualizar" method="POST">
                 <input type="text" hidden="" id="idtrab" name="id_trab">
                      <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-4 col-md-4">
                             <label for="inputEmail4">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-4 col-md-4">
                             <label for="inputPassword4">Apellido</label>
                             <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-4 col-md-4">
                               <label for="inputPassword4">Cédula</label>
                               <input type="text" class="form-control" id="ci" name="ci" placeholder="Cédula">
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-3 col-md-2">
                             <label for="inputEmail4">Telefono</label>
                             <input type="text" class="form-control" id="tlf" name="tlf" placeholder="Telefono">
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-3 col-md-3">
                             <label for="inputPassword4">Cargo</label>
                             <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo">
                             </div>
-                            <div class="form-group col-md-7">
+                            <div class="form-group col-6 col-md-7">
                             <label for="inputPassword4">Dirección</label>
                             <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
                             </div>
                         </div>
                         <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-4 col-md-4">
                             <label for="inputPassword4">Banco</label>
                             <input type="text" class="form-control" id="banco" name="banco" placeholder="Banco">
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-8 col-md-8">
                             <label for="inputPassword4">Nº de Cuenta</label>
                             <input type="text" class="form-control" id="n_cuenta" name="n_cuenta" placeholder="NºCuenta">
                             </div>
                             
                         </div> 
-                        <button type="" id="btnActualizar" class="btn btn-primary">Actualizar</button>
-                        </form>
                         
+                        </form>
+                        </div>
+                        <div class="modal-footer bg-dark">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-info" id="btnActualizar" style="color:white;">Actualizar</button>
                         </div>
                         
 

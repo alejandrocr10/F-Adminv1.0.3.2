@@ -55,8 +55,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        <div class="col-1"></div>
-        <div class="col-9">
+        <div class="col-12 col-md-1"></div>
+        <div class="col-12 col-md-9">
             <div class="card card-dark card-outline card-tabs">
               <div class="card-header p-0 pt-1 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
@@ -116,6 +116,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div>
 <!-- ./wrapper -->
 
+<!-- Modal ASISTENCIAS INDIVIDUALES -->
+<div class="modal fade" id="modalAsistencias" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-dark">
+					<h5 class="modal-title" id="exampleModalLabel">Asistencias</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+            <div id="asistencias"></div>
+						
+        </div>	
+						
+				<div class="modal-footer bg-dark">
+					<button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+				</div>
+					
+			</div>
+		</div>
+	</div>
+  <!-- Modal ASISTENCIAS INDIVIDUALES -->
+
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
@@ -148,4 +173,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	});
 </script>
 
+<script>  
+ function verAsistencias(ci_e){  
+  var ci = ci_e;  
+           $.ajax({  
+                url:"tablas/tablaAsistenciaIndv.php",  
+                method:"post",  
+                data:{ci:ci},  
+                success:function(data){  
+                     $('#asistencias').html(data);  
+                     $('#modalAsistencias').modal("show");  
+                }  
+           });
+	}
+ </script>
 

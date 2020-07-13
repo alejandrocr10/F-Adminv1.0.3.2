@@ -52,10 +52,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div class="container-fluid pb-3">
       <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-12 d-block d-xs-block d-sm-none"><h2 class="">F&Admin | Bievenido!</h2></div>
+        <div class="col-12">
         <!--CAROUSEL-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide d-none d-xs-none d-sm-block" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -95,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
         <!--CAROUSELEND-->
         </div>
-        <div class="col-1"></div>
+        
         
       </div>
     </div>
@@ -113,7 +113,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           
               <!-- Accesos Directos -->
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-12">
 
             <div class="small-box bg-warning">
               <div class="inner">
@@ -129,7 +129,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-12">
             <div class="small-box bg-info">
               <div class="inner">
                 <h4 style="font-size: 20px;">
@@ -144,7 +144,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-12">
             <div class="small-box bg-primary">
               <div class="inner">
                 <h4 style="font-size: 20px;">
@@ -163,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-12">
             <div class="small-box bg-danger">
               <div class="inner">
                 <h4 style="font-size: 20px;">
@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-12">
             <div class="small-box bg-success">
               <div class="inner">
                 <h4 style="font-size: 20px;">
@@ -193,7 +193,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-12">
             <div class="small-box bg-dark">
               <div class="inner">
                 <h4 style="font-size: 20px;">
@@ -293,7 +293,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Accesos Directos -->
         <div class="row">
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-12">
             <div class="small-box bg-danger">
               <div class="inner">
                 <h4 style="font-size: 20px;">
@@ -308,7 +308,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-12">
             <div class="small-box bg-primary">
               <div class="inner">
                 <h4 style="font-size: 20px;">
@@ -323,7 +323,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-12">
             <div class="small-box bg-warning">
               <div class="inner">
                 <h4 style="font-size: 20px;">

@@ -56,9 +56,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row">
 
-        <div class="col-1"></div>
+        <div class="col-md-1"></div>
 
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <div class="card card-dark card-outline card-tabs">
               <div class="card-header p-0 pt-1 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
@@ -80,19 +80,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                      <div class="form-row">
                             <div class="form-group col-md-4">
                             <label for="inputEmail4">Nombre del periodo</label>
-                            <input type="text" class="form-control"  name="nombre" placeholder="Nombre">
+                            <input type="text" class="form-control"  name="nombre" placeholder="Nombre" required>
                             </div>
                             <div class="form-group col-md-4">
                             <label for="inputEmail4">Fecha de inicio</label>
-                            <input type="date" class="form-control"  name="fecha_i" placeholder="Nombre">
+                            <input type="date" class="form-control"  name="fecha_i" placeholder="Nombre" required>
                             </div>
                             <div class="form-group col-md-4">
                             <label for="inputPassword4">Fecha final</label>
-                            <input type="date" class="form-control"  name="fecha_f" placeholder="Apellido">
+                            <input type="date" class="form-control"  name="fecha_f" placeholder="Apellido" required>
                             </div>
                      </div>
-                     
-                        <button type="" id="btnRegistrar" class="btn btn-primary">Registrar</button>
+                        <div class="text-center">
+                        <button type="submit" id="btnRegistrar" class="btn btn-primary">Registrar</button>
+                        </div>
                         </form>
                     <!-- FORM END -->
                   </div>
@@ -100,7 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="tab-pane fade active show" id="custom-tabs-three-profile" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
                      
                     <!-- DATATABLES -->
-                    <div class="container">
+                    <div class="container-fluid">
                       <div class="row">
                         <div class="col-12">
                           
@@ -129,9 +130,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
   <!-- Modal editar -->
 	<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-dark">
 					<h5 class="modal-title" id="exampleModalLabel">Actualizar Periodo</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -147,7 +148,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<label>Fecha Final</label>
 						<input type="date" class="form-control input-sm" id="fecha_f" name="fecha_f" style="font-size:18px;">
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer bg-dark">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 					<button type="button" class="btn btn-info" id="btnActualizar" style="color:white;">Actualizar</button>
 				</div>

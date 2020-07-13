@@ -55,9 +55,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row">
 
-        <div class="col-1"></div>
+        <div class="col-md-1"></div>
 
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <div class="card card-dark card-outline card-tabs">
               <div class="card-header p-0 pt-1 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
@@ -77,30 +77,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                      <form action="" id="frm" method="POST">
                      <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-6 col-md-6">
                             <label for="inputEmail4">Nombre</label>
-                            <input type="text" class="form-control"  name="nombre" placeholder="Nombre">
+                            <input type="text" class="form-control"  name="nombre" placeholder="Nombre" required>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-6 col-md-6">
                             <label for="inputPassword4">Apellido</label>
-                            <input type="text" class="form-control"  name="apellido" placeholder="Apellido">
+                            <input type="text" class="form-control"  name="apellido" placeholder="Apellido" required>
                             </div>
                      </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-7 col-md-6">
                             <label for="inputEmail4">Correo</label>
-                            <input type="email" class="form-control"  name="correo" placeholder="Correo">
+                            <input type="email" class="form-control"  name="correo" placeholder="Correo" required>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-5 col-md-6">
                             <label for="inputPassword4">Contraseña</label>
-                            <input type="password" class="form-control"  name="passw" placeholder="Contraseña">
+                            <input type="password" class="form-control"  name="passw" placeholder="Contraseña" required>
                             </div>
                         </div>
                         
                         <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-6 col-md-4">
                             <label for="inputState">Nivel</label>
-                            <select id="inputState" name="nivel" class="form-control">
+                            <select id="inputState" name="nivel" class="form-control" required>
                                 <option selected>Elegir...</option>
                                 <option value ="1">Abogado</option>
                                 <option value ="2">Administrador</option>
@@ -108,7 +108,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </select>
                             </div>
                         </div> 
+                        <div class="text-center">
                         <button type="" id="btnRegistrar" class="btn btn-primary">Registrar</button>
+                        </div>
+                        
                         </form>
                     <!-- FORM END -->
                   </div>
@@ -116,7 +119,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="tab-pane fade active show" id="custom-tabs-three-profile" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
                      
                     <!-- DATATABLES -->
-                    <div class="container">
+                    <div class="container-fluid">
                       <div class="row">
                         <div class="col-12">
                           
@@ -145,30 +148,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
   <!-- Modal editar -->
 	<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered " role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-dark">
 					<h5 class="modal-title" id="exampleModalLabel">Actualizar Usuario</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body ">
 					<form id="frmActualizar" method="post">
 						<input type="text" hidden="" id="idest" name="id_est">
-						<label>Nombre</label>
-						<input type="text" class="form-control input-sm" id="nombre" name="nombre" style="font-size:18px;">
+						
+            <label>Nombre</label>
+						<input type="text" class="form-control input-sm " id="nombre" name="nombre" style="font-size:18px;">
 						<label>Apellido</label>
 						<input type="text" class="form-control input-sm" id="apellido" name="apellido" style="font-size:18px;">
 						<label>correo</label>
 						<input type="email" class="form-control input-sm" id="correo" name="correo" style="font-size:18px;">
 						
 						<div class="form-row">
-                <div class="form-group col-md-8">
+                <div class="form-group col-8 col-md-8">
                   <label>Contraseña</label>
                   <input type="text" class="form-control input-sm" id="contraseña" name="contraseña" style="font-size:18px;">
                 </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-4 col-md-4">
                             <label for="inputState">Nivel</label>
                             <select id="nivel" name="nivel" class="form-control">
                                 <option selected>Elegir...</option>
@@ -181,7 +185,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<!--Seccion-->
 						
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer bg-dark">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 					<button type="button" class="btn btn-info" id="btnActualizar" style="color:white;">Actualizar</button>
 				</div>

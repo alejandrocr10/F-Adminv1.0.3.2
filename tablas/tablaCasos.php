@@ -15,7 +15,7 @@ require_once "../php/conexion.php";
 
 ?>
 
-	<table class="table table-hover text-center" id="iddatable">
+	<table class="table table-hover text-center table-striped  table-hover " id="iddatable">
              <thead>
 					<tr>
 						
@@ -30,8 +30,7 @@ require_once "../php/conexion.php";
 						<th class="text-center">Responsable</th>
 						<?php } ?>
 						<th class="text-center">Estado</th>
-						
-						<th class="text-center">Ver Documentos</th>
+						<th class="text-center">Documentos</th>
 						<?php
                         if($_SESSION['nivel']==3 || $_SESSION['nivel']==1){
                         ?>
@@ -40,7 +39,7 @@ require_once "../php/conexion.php";
 						<?php
                         if($_SESSION['nivel']==3){
                         ?>
-						<th class="text-center">Editar</th>
+						
 						<th class="text-center">Eliminar</th>
 						<?php } ?>
 						<?php
@@ -66,7 +65,16 @@ require_once "../php/conexion.php";
                         ?>
 					<td><?php echo $mostrar[6] ?></td>
 						<?php } ?>
-					<td><small class="label pull-right bg-warning"><?php echo $mostrar[7] ?></small></td>
+						<?php
+                        if($mostrar[7]=="EN PROCESO"){
+                        ?>
+						<td><span class="badge badge-dark text-white"><?php echo $mostrar[7] ?></span></td>
+						<?php }elseif($mostrar[7]=="FINALIZADO"){ ?>
+							<td><span class="badge badge-danger text-white"><?php echo $mostrar[7] ?></span></td>
+							<?php }else { ?>
+								<td><span class="badge badge-success text-white"><?php echo $mostrar[7] ?></span></td>
+							<?php } ?>
+							
                     <td><a href="#!" class="btn btn-primary btn-raised view_data" onclick="docsModal('<?php echo $mostrar[1]; ?>','<?php echo $mostrar[6]; ?>')" ><i class="fa fa-eye"></i></a></td>
 					<?php
                      if($_SESSION['nivel']==3 || $_SESSION['nivel']==1){
@@ -94,13 +102,15 @@ require_once "../php/conexion.php";
 <script>
   $(function () {
     $('#iddatable').DataTable({
-        "paging": true,
+        "rowReorder": true,
+        "scrollY": 300,
+        "paging": false,
         "lengthChange": true,
         "searching": true,
         "ordering": true,
-        "info": true,
+        "info": false,
         "autoWidth": false,
-        "responsive": true,
+        "responsive": false,
         language: {
                 "lengthMenu": "Mostrar _MENU_ registros",
                 "zeroRecords": "No se encontraron resultados",

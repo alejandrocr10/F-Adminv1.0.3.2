@@ -233,7 +233,7 @@
 						where id='$datos[0]'";
 
 			//ejecutamos la sentencia de sql
-			return mysqli_query($conexion,$sql);
+			$result = mysqli_query($conexion,$sql);
 		}
 		/*ACTUALIZARFIN*/
 

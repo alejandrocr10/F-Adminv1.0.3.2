@@ -17,6 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="icon" href="img/F&Alogo2.png" type="image/x-icon">
   <!-- datatables -->
   <link rel="stylesheet" type="text/css" href="plugins/DataTablesBoton/DataTables-1.10.21/css/dataTables.bootstrap4.min.css">
+  <script src="plugins/datatables-rowreorder/css/rowReorder.bootstrap4.min.css"></script>
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <link rel="stylesheet" type="text/css" href="plugins/alertify/css/alertify.css">
@@ -76,17 +77,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                      <form action="procesos/registrarCaso.php" id="frm" method="POST" enctype="multipart/form-data">
                      <div class="form-row">
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-5 col-md-5">
                             <label for="inputEmail4">Titulo</label>
                             <input type="text" class="form-control"  name="titulo" placeholder="titulo"  required>
                             </div>
-                            <div class="form-group col-md-7">
+                            <div class="form-group col-7 col-md-7">
                             <label for="inputPassword4">Descripción</label>
                             <input type="text" class="form-control"  name="descripcion" placeholder="descripcion" required>
                             </div>   
                      </div>
                         <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-7 col-md-4">
                             <label for="inputState">Materia</label>
                             <select id="inputState" name="materia" class="form-control" required>
                                 <option value="">Elegir...</option>
@@ -95,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <option value="Civil">Civil</option>
                             </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-5 col-md-3">
                             <label for="inputPassword4">Fecha </label>
                             <input type="date" class="form-control"  name="fecha" placeholder="fecha" required>
                             </div>
@@ -106,35 +107,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!--CLIENTES-->
                         <div class="form-row">
                             <table class="container" id="dynamic_field">
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-4 col-md-2">
                             <input type="number" hidden="" id="existe" name="existe">
                             <label>Nombre</label>
                             <input type="text" class="form-control" id="nombre_ag" name="nombre[]" placeholder="Nombre" required>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-4 col-md-2">
                             <label>Apellido</label>
                             <input type="text" class="form-control" id="apellido_ag" name="apellido[]" placeholder="Apellido" required required>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-4 col-md-2">
                             <label>Cedula</label>
                             <input type="text" class="form-control" id="ci_ag" name="ci[]" placeholder="Cedula" required required>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-6 col-md-2">
                             <label>Rif</label>
                             <input type="text" class="form-control" id="rif_ag"  name="rif[]" placeholder="rif" required required>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-6 col-md-2">
                             <label>Telefono</label>
                             <input type="text" class="form-control" id="tlf_ag" name="tlf[]" placeholder="Telefono" required required>
                             </div> 
-                            <div class="form-group col-md-1">
+                            <div class="form-row">
+                            <div class="form-group col-6 col-md-6">
                             <label for="">Añadir</label><div></div>
                               <button type="button" name="add"  id="add" class="btn btn-success"><i class="fa fa-plus-circle"></i></button>
                             </div>
-                            <div class="form-group col-md-1">
+                            <div class="form-group col-6 col-md-6">
                             <label for="">Agenda</label><div></div>
                               <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAgenda"><i class="fa fa-book"></i></button>
                             </div> 
+                            </div>
                             </table> 
                      </div>
                      
@@ -143,15 +146,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                      <!--DOCUMENTOS-->
                      <div class="form-row">
                             <table class="container" id="dynamic_docs">
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-6 col-md-3">
                             <label>Titulo</label>
                             <input type="text" class="form-control" size="" maxlength="" name="titulo_doc[]" placeholder="titulo" required>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-6 col-md-3">
                             <label>Descripción</label>
                             <input type="text" class="form-control"  name="descripcion_doc[]" placeholder="Descripción" required>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-10 col-md-3">
                             <label for="exampleInputFile">Documento</label>
                             <div class="input-group">
                               <div class="custom-file">
@@ -160,14 +163,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               </div>
                             </div>
                           </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-2 col-md-2">
                             <label for="">Añadir</label><div></div>
                               <button type="button" name="add"  id="add_doc" class="btn btn-success"><i class="fa fa-plus-circle"></i></button>
                             </div> 
                             </table> 
                      </div>
                      <br>
+                     <div class="text-center">
                         <button type="submit" id="" class="btn btn-primary">Registrar</button>
+                        </div>
                         </form>
                     <!-- FORM END -->
                   </div>
@@ -175,7 +180,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="tab-pane fade active show" id="custom-tabs-three-profile" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
                      
                     <!-- DATATABLES -->
-                    <div class="container">
+                    <div class="container-fluid">
                       <div class="row">
                         <div class="col-12">
                           
@@ -204,9 +209,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
 <!-- Modal EDITAR -->
 <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-dark">
 					<h5 class="modal-title" id="modalEditar">Actualizar caso</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -215,7 +220,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<div class="modal-body">
 					<form id="frmActualizar" method="post">
 						<input type="text" hidden="" id="id_cas" name="id_cas">
-						<label>Descripción</label>
+						<?php if ($_SESSION['nivel']==3) { ?>
+            <label>Descripción</label>
 						<input type="text" class="form-control input-sm" id="descripcion" name="descripcion" style="font-size:18px;">
             <label>Cliente/s</label>
 						<input type="text" class="form-control input-sm" id="cliente" name="cliente" style="font-size:18px;">
@@ -236,15 +242,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <option value ="RECIBIDO">RECIBIDO</option>
                                 <option value ="EN PROCESO">EN PROCESO</option>
                                 <option value ="FINALIZADO">FINALIZADO</option>
-                       </select>
+                            </select>
                             </div>
                     </div>
-            
+            <?php }else {?>
+
+						<input type="text" hidden="" class="form-control input-sm" id="descripcion" name="descripcion" style="font-size:18px;">
+						<input type="text" hidden="" class="form-control input-sm" id="cliente" name="cliente" style="font-size:18px;">
+						<div class="row">
+                            <div class="col-md-0">
+                            <select id="materia" hidden="" name="materia" class="form-control">
+                                <option selected>Elegir...</option>
+                                <option value ="Laboral">Laboral</option>
+                                <option value ="Mercantil">Mercantil</option>
+                                <option value ="Civil">Civil</option>
+                              </select>
+                            </div>
+                            <div class="col-md-10">
+                            <label for="inputState">Estado</label>
+                            <select id="estado" name="estado" class="form-control">
+                                <option selected>Elegir...</option>
+                                <option value ="RECIBIDO">RECIBIDO</option>
+                                <option value ="EN PROCESO">EN PROCESO</option>
+                                <option value ="FINALIZADO">FINALIZADO</option>
+                            </select>
+                            </div>
+                    </div>
+              
+
+            <?php }?>
 						
 						<!--Seccion-->
 						
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer bg-dark">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 					<button type="button" class="btn btn-info" id="btnActualizar" style="color:white;">Actualizar</button>
 				</div>
@@ -256,9 +287,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Modal Agenda -->
 <div class="modal fade" id="modalAgenda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-dark">
 					<h5 class="modal-title" id="modalEditar">Clientes</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -267,7 +298,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<div class="modal-body">
 					
 						<!-- DATATABLES -->
-            <div class="container">
+            <div class="container-fluid">
                       <div class="row">
                         <div class="col-12">
                           
@@ -279,8 +310,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- DATATABLES END -->
 						
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				<div class="modal-footer bg-dark">
+					<button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
 					
 				</div>
 					
@@ -291,9 +322,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Modal AñadeDocs -->
 <div class="modal fade" id="modalAñadeDocs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-dark">
 					<h5 class="modal-title" id="modalEditar">Añade Documentos al Caso</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -324,7 +355,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
 						
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer bg-dark">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 					<button type="submit" class="btn btn-primary">Registrar</button>
 				</div>
@@ -336,16 +367,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- NEW MODAL -->
 <div id="dataModal" class="modal fade">  
-      <div class="modal-dialog modal-lg">  
+      <div class="modal-dialog modal-dialog-centered modal-lg">  
            <div class="modal-content">  
-                <div class="modal-header">  
+                <div class="modal-header bg-dark">  
                      <h4 class="modal-title">Documentos del Caso</h4>  
                      <button type="button" class="close" data-dismiss="modal">&times;</button>  
                 </div>  
-                <div class="modal-body" id="ver_docs">  
+                <div class="modal-body" >  
                 <!--AQUI CARGA LA TABLA DE LOS DOCUMENTOS-->
+                
+                  <div id="ver_docs"></div>
+                
                 </div>  
-                <div class="modal-footer">  
+                <div class="modal-footer bg-dark">  
                      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>  
                 </div>  
            </div>  
@@ -379,6 +413,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-rowreorder/js/rowReorder.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 </body>
@@ -522,7 +557,7 @@ function agenda(id,existe){
 
   <script>
   function eliminarDatos(id){
-		alertify.confirm('Eliminar un Caso', '¿Si elimina este caso perdera los documentos guardados.?', function(){ 
+		alertify.confirm('Eliminar un Caso', 'Si elimina este caso perdera los documentos guardados.', function(){ 
 
 			$.ajax({
 				type:"POST",
@@ -557,10 +592,10 @@ $(document).ready(function(){
 				url:"procesos/actualizarCaso.php",
 				success:function(r){
 					if(r==1){
+            alertify.error("Fallo al Actualizar :(");
+          }else{
             $('#iddatatable').load('tablas/tablaCasos.php');
 						alertify.success("Actualizado con exito :D");
-          }else{
-            alertify.error("Fallo al Actualizar :(");
             	
 					}
 				}

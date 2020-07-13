@@ -27,7 +27,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-body login-card-body">
+    <div class="card-body">
       <p class="login-box-msg">Inicia Sesión</p>
 
       <form action="./php/validarLogin.php" method="post">
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-              <select id="inputState" name="nivel" class="form-control">
+              <select id="" name="nivel" class="form-control">
                   <option selected>Entrar como...</option>
                   <option value ="1">Abogado</option>
                   <option value ="2">Administrador</option>

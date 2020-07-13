@@ -1,51 +1,55 @@
 <?php
 require_once "../php/conexion.php";
 session_start();
-$carpeta = $_POST['carpeta'];
-if ($_SESSION['nivel'] == 1) {
-      $query = "SELECT * FROM archivos WHERE carpeta = '$carpeta' AND responsable = '".$_SESSION['usuario']."'";
-}else{
-      $query = "SELECT * FROM archivos WHERE carpeta = '$carpeta' AND responsable = '".$_POST['responsable']."'";
-}
+$output = '';
+$ci = $_POST['ci'];
 
-$result = mysqli_query($conexion, $query);  
+$sql="SELECT  * FROM asistencia WHERE cedula='$ci'";
+
+
+$result = mysqli_query($conexion, $sql);  
 
 ?>
-      
+
 	<table class="table table-hover text-center table-striped  table-hover" id="iddatable2">
              <thead>
 					<tr>
-                                          <th class="text-center">Titulo</th>
-                                          <th class="text-center">Descripción</th>
-                                          <th class="text-center">Fecha</th>
-                                          <th class="text-center">Descargar</th>
+						
+						<th class="text-center">Periodo</th>
+						<th class="text-center">Fecha</th>
+						<th class="text-center">Asistencia</th>
+						<th class="text-center">Nota</th>
 						
 					</tr>
 			</thead>
 			
 		<tbody>
-                        <?php while ($mostrar=mysqli_fetch_array($result)) { ?>
-                              <tr>
-                                    <td><?php echo $mostrar['titulo'] ?></td>
-                                    <td><?php echo $mostrar['descripcion'] ?></td>
-                                    <td><?php echo $mostrar['fecha'] ?></td>
-                                    <td><a href="<?php echo $mostrar['ruta'] ?>" class="btn btn-info" download><i class="fa fa-download"></i></a></td>
-                                    
-                              </tr>
+        <?php 
+			while ($mostrar=mysqli_fetch_array($result)) {
+        $asis = ($mostrar["asistencia"]==1) ? "SI" : "NO";
+				?>
+				<tr>
+					<td><?php echo $mostrar['periodo'] ?></td>
+					<td><?php echo $mostrar['fecha'] ?></td>
+					<td><?php echo $asis ?></td>
+					<td><?php echo $mostrar['causa'] ?></td>
+                    
+          </tr>
 				<?php 
-                        }
-                        ?>
+			}
+			?>
   
 		</tbody>
 	</table>
 
+
   <script>
   $(function () {
     $('#iddatable2').DataTable({
-      "rowReorder": true,
-        "scrollY": 200,
+		"rowReorder": true,
+        "scrollY": 300,
         "paging": false,
-        "lengthChange": false,
+        "lengthChange": true,
         "searching": true,
         "ordering": true,
         "info": false,

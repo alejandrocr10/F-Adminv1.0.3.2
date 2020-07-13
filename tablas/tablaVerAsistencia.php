@@ -2,46 +2,36 @@
 
 require_once "../php/conexion.php";
                             
-                            $sql="SELECT E.Nombre,E.Apellido,E.Cedula,A.Fecha,A.Asistencia,A.causa,A.periodo
-                            FROM empleados E
-                            JOIN asistencia A
-                            ON E.cedula = A.cedula";
+							$sql="SELECT *
+							FROM empleados ";
                             
                             $result=mysqli_query($conexion,$sql);
 
 ?>
 
-	<table class="table table-hover text-center" id="iddatable">
+	<table class="table table-hover  table-striped text-center  table-hover" id="iddatable">
              <thead>
 					<tr>
 						
 						<th class="text-center">Nombre</th>
-						<th class="text-center">Periodo</th>
-						<th class="text-center">Fecha</th>
-						<th class="text-center">Asistencia</th>
-						<th class="text-center">Nota</th>
+						<th class="text-center">Cedula</th>
+						<th class="text-center">Cargo</th>
+						<th class="text-center">Asistencias</th>
+						
 					</tr>
 			</thead>
 			
 		<tbody>
         <?php 
-			while ($mostrar=mysqli_fetch_row($result)) {
+			while ($mostrar=mysqli_fetch_array($result)) {
 				?>
 				<tr >
+
+					<td><?php echo $mostrar['nombre']." ".$mostrar['apellido']; ?></td>
+					<td><?php echo $mostrar['cedula']; ?></td>
+					<td><?php echo $mostrar['cargo']; ?></td>
+					<td><a href="#!" class="btn btn-warning btn-raised" onclick="verAsistencias('<?php echo $mostrar['cedula'] ?>')"><i class="fa fa-eye"></i></a></td>
 					
-        <?php if ($mostrar[4] == 1) {
-          $asistencia = "SI";
-        }else {
-          $asistencia = "NO";
-        } ?>
-					
-					<td><?php echo $mostrar[0]." ".$mostrar[1]; ?></td>
-					<td><?php echo $mostrar[6]; ?></td>
-					<td><?php echo $mostrar[3]; ?></td>
-					<td><?php echo $asistencia ?></td>
-					<td><?php echo $mostrar[5] ?></td>
-					
-          
 				</tr>
 				<?php 
 			}
@@ -53,13 +43,15 @@ require_once "../php/conexion.php";
 <script>
   $(function () {
     $('#iddatable').DataTable({
-        "paging": true,
-        "lengthChange": false,
+      "rowReorder": true,
+        "scrollY": 300,
+        "paging": false,
+        "lengthChange": true,
         "searching": true,
         "ordering": true,
-        "info": true,
+        "info": false,
         "autoWidth": false,
-        "responsive": true,
+        "responsive": false,
         language: {
                 "lengthMenu": "Mostrar _MENU_ registros",
                 "zeroRecords": "No se encontraron resultados",
@@ -75,27 +67,7 @@ require_once "../php/conexion.php";
 			     },
 			     "sProcessing":"Procesando...",
             },
-            dom:'Bfrtilp',
-			    buttons:[
-				{
-					extend: 'excelHtml5',
-					text: '<i class="fas fa-file-excel"></i>',
-					titleAttr: 'Exportar a Excel',
-					className: 'btn btn-success'
-				},
-				{
-					extend: 'pdfHtml5',
-					text: '<i class="fas fa-file-pdf"></i>',
-					titleAttr: 'Exportar a PDF',
-					className: 'btn btn-danger'
-				},
-				{
-					extend: 'print',
-					text: '<i class="fa fa-print"></i>',
-					titleAttr: 'Imprimir',
-					className: 'btn btn-info'
-				},
-			]
+            
     });
   });
 </script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-07-2020 a las 18:54:34
+-- Tiempo de generación: 09-07-2020 a las 22:23:56
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.2
 
@@ -57,7 +57,9 @@ INSERT INTO `archivos` (`id`, `titulo`, `descripcion`, `fecha`, `ruta`, `carpeta
 (36, 'Documento ', 'Movistar2', '2020-07-05', 'Archivos/casos/Caso III/casos.php', 'Caso III', 'Jefferson Caballero'),
 (37, 'ELIMINAR', 'ELIMINAR', '2020-07-05', 'Archivos/casos/ELIMINAR/noche estrellada.png', 'ELIMINAR', 'Jefferson Caballero'),
 (38, 'ELIMINAR2', 'ELIMINAR2', '2020-07-05', 'Archivos/casos/ELIMINAR/', 'ELIMINAR', 'Jefferson Caballero'),
-(39, 'ELIMINAR3', 'ELIMINAR3', '2020-07-05', 'Archivos/casos/ELIMINAR/2013-tesla-model-s-front-three-quarters-on-the-beach.jpg', 'ELIMINAR', 'Jefferson Caballero');
+(39, 'ELIMINAR3', 'ELIMINAR3', '2020-07-05', 'Archivos/casos/ELIMINAR/2013-tesla-model-s-front-three-quarters-on-the-beach.jpg', 'ELIMINAR', 'Jefferson Caballero'),
+(40, 'Documento xxx', 'xxx', '2020-07-06', 'Archivos/casos/CANTV ES HACKEADO/sisnotasv1.8.sql', 'CANTV ES HACKEADO', 'Victor Figueroa'),
+(41, 'Documento NUEVO ADRIAN', 'Movistar', '2020-07-09', 'Archivos/casos/CASO I/Cuestionario.docx', 'CASO I', 'Jefferson Caballero');
 
 -- --------------------------------------------------------
 
@@ -79,7 +81,10 @@ CREATE TABLE `archivos_compartidos` (
 
 INSERT INTO `archivos_compartidos` (`id`, `titulo`, `descripcion`, `fecha`, `ruta`) VALUES
 (60, 'Documento', 'Prueba', '2020-06-27', 'Archivos/archivos_compartidos/PÃ¡rrafo expositivo sobre la computadora.docx'),
-(61, 'img', 'jeis', '2020-07-03', 'Archivos/archivos_compartidos/h.png');
+(61, 'img', 'jeis', '2020-07-03', 'Archivos/archivos_compartidos/h.png'),
+(62, 'Documento ', 'Movistar', '2020-07-09', 'Archivos/archivos_compartidos/capituloI.docx'),
+(63, 'Adrian', 'Prueba', '2020-07-09', 'Archivos/archivos_compartidos/PPDIOO.png'),
+(64, 'Akejandrk', 'xxxxx', '2020-07-09', 'Archivos/archivos_compartidos/redes.docx');
 
 -- --------------------------------------------------------
 
@@ -103,7 +108,17 @@ CREATE TABLE `asistencia` (
 INSERT INTO `asistencia` (`id`, `cedula`, `fecha`, `asistencia`, `causa`, `periodo`) VALUES
 (26, 'v-26.918.748', '2020-07-04', 1, '*', 'JUL-1'),
 (27, 'v-20.145.458', '2020-07-04', 1, '*', 'JUL-1'),
-(28, 'v-17.380.669', '2020-07-04', 1, '*', 'JUL-1');
+(28, 'v-17.380.669', '2020-07-04', 1, '*', 'JUL-1'),
+(29, 'v-26.918.748', '2020-07-15', 1, '*', 'JUL-1'),
+(30, 'v-20.145.458', '2020-07-15', 0, 'PERMISO', 'JUL-1'),
+(31, 'v-17.380.669', '2020-07-06', 1, '*', 'JUL-1'),
+(32, 'v-17.380.669', '2020-07-07', 1, '*', 'JUL-1'),
+(33, 'v-17.380.669', '2020-07-08', 1, '*', 'JUL-1'),
+(34, 'v-17.380.669', '2020-07-09', 1, '*', 'JUL-1'),
+(35, 'v-26.918.748', '2020-07-23', 0, 'ENFERMEDAD', 'JUL-2'),
+(36, 'v-26.918.748', '2020-07-09', 1, '*', 'JUL-1'),
+(37, 'v-20.145.458', '2020-07-09', 1, '*', 'JUL-1'),
+(38, 'v-17.380.669', '2020-07-09', 1, '*', 'JUL-1');
 
 -- --------------------------------------------------------
 
@@ -127,7 +142,7 @@ CREATE TABLE `casos` (
 --
 
 INSERT INTO `casos` (`id`, `titulo`, `descripcion`, `materia`, `fecha_inicio`, `cliente`, `responsable`, `estado`) VALUES
-(20, 'CASO I', 'Divorcio Lic.Asdrubal.', 'Civil', '2020-06-29', 'Asdrubal Ortiz. ', 'Jefferson Caballero', 'EN PROCESO'),
+(20, 'CASO I', 'NOSE', 'Civil', '2020-06-29', 'NOSE2', 'Jefferson Caballero', 'FINALIZADO'),
 (25, 'CASO I', 'ESTAFA FERMIN', 'Laboral', '2020-07-02', 'Jose Fermin. ', 'Victor Figueroa', 'EN PROCESO'),
 (26, 'Documento  de Venta', 'Venta de casa ', 'Mercantil', '2020-07-03', 'Margarita Cabello. ', 'Victor Figueroa', 'EN PROCESO'),
 (28, 'CASO CANTV', 'CANTV ha sido demandado por 1 millon de $', 'Mercantil', '2020-07-03', 'CANTV CANTV. ', 'Victor Figueroa', 'EN PROCESO'),
@@ -158,7 +173,7 @@ INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `cedula`, `rif`, `tlf`) VALU
 (30, 'Jose', 'Camachi', '26918748', 'NO', '0414-777.61.18'),
 (31, 'Margarita', 'Cabello', 'V-4.621.360', 'NO', '0414-189.84.96'),
 (33, 'Jose', 'Fermin', 'V-4.654.858', 'NO', '0414-777.21.27'),
-(34, 'CANTV', 'CANTV', 'NO', 'J-987654123', '0293-8574858'),
+(34, 'CANTV', 'CANTVx', 'NO', 'J-987654123', '0293-8574858'),
 (37, 'Vestalia', 'Romero', 'V-11.826.265', 'NO', '0414-159.54.63'),
 (38, 'Maria', 'Lopez', '26918748', '123456789', '04145858489');
 
@@ -207,7 +222,8 @@ CREATE TABLE `periodos` (
 --
 
 INSERT INTO `periodos` (`id`, `nombre`, `fecha_i`, `fecha_f`) VALUES
-(1, 'JUL-1', '2020-07-02', '2020-07-09');
+(1, 'JUL-1', '2020-07-01', '2020-07-15'),
+(2, 'JUL-2', '2020-07-16', '2020-07-30');
 
 -- --------------------------------------------------------
 
@@ -294,19 +310,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `archivos`
 --
 ALTER TABLE `archivos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `archivos_compartidos`
 --
 ALTER TABLE `archivos_compartidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `asistencia`
 --
 ALTER TABLE `asistencia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `casos`
@@ -330,7 +346,7 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `periodos`
 --
 ALTER TABLE `periodos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

@@ -9,7 +9,7 @@ require_once "../php/conexion.php";
 
 ?>
 
-	<table class="table table-hover text-center" id="iddatable">
+	<table class="table table-hover text-center table-striped  table-hover" id="iddatable">
              <thead>
 					<tr>
 						
@@ -54,13 +54,15 @@ require_once "../php/conexion.php";
 <script>
   $(function () {
     $('#iddatable').DataTable({
-        "paging": true,
+        "rowReorder": true,
+        "scrollY": 300,
+        "paging": false,
         "lengthChange": true,
         "searching": true,
         "ordering": true,
-        "info": true,
+        "info": false,
         "autoWidth": false,
-        "responsive": true,
+        "responsive": false,
         language: {
                 "lengthMenu": "Mostrar _MENU_ registros",
                 "zeroRecords": "No se encontraron resultados",

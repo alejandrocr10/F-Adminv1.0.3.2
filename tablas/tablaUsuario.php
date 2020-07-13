@@ -9,7 +9,7 @@ require_once "../php/conexion.php";
 
 ?>
 
-	<table class="table table-hover text-center" id="iddatable">
+	<table class="table table-hover text-center table-striped  table-hover" id="iddatable">
              <thead>
 					<tr>
 						
@@ -36,7 +36,14 @@ require_once "../php/conexion.php";
 					<td><?php echo $mostrar[2] ?></td>
 					<td><?php echo $mostrar[3] ?></td>
 					<td><?php echo "****" ?></td>
-					<td><?php echo $mostrar[5] ?></td>
+                    <?php if ($mostrar[5]==1) {
+                        $niv = "ABOGADO";
+                    }elseif ($mostrar[5]==2) {
+                        $niv = "ADMINISTRADOR";
+                    }else {
+                        $niv = "TECNICO";
+                    }?>
+					<td><?php echo $niv ?></td>
                     <?php
                         if($_SESSION['nivel']==3){
                     ?>
@@ -54,13 +61,15 @@ require_once "../php/conexion.php";
 <script>
   $(function () {
     $('#iddatable').DataTable({
-        "paging": true,
+        "rowReorder": true,
+        "scrollY": 300,
+        "paging": false,
         "lengthChange": true,
         "searching": true,
         "ordering": true,
-        "info": true,
+        "info": false,
         "autoWidth": false,
-        "responsive": true,
+        "responsive": false,
         language: {
                 "lengthMenu": "Mostrar _MENU_ registros",
                 "zeroRecords": "No se encontraron resultados",

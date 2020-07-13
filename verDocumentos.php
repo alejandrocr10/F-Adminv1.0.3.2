@@ -1,22 +1,24 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>F&Admin | Recursos Compartidos</title>
+  <title>F&Admin | Ver Documentos</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <link rel="icon" href="img/F&Alogo2.png" type="image/x-icon">
   <!-- datatables -->
   <link rel="stylesheet" type="text/css" href="plugins/DataTablesBoton/DataTables-1.10.21/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="css/botonesdatatablefixed.css">
+  <script src="plugins/datatables-rowreorder/css/rowReorder.bootstrap4.min.css"></script>
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <link rel="stylesheet" type="text/css" href="plugins/alertify/css/alertify.css">
@@ -42,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">ADM | Compartir</h1>
+            <h1 class="m-0 text-dark">ACT | Ver Documentos</h1>
           </div><!-- /.col -->
          
         </div><!-- /.row -->
@@ -54,63 +56,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-
         <div class="col-md-1"></div>
-
-        <div class="col-12 col-md-10">
+        <div class="col-12 col-md-9">
             <div class="card card-dark card-outline card-tabs">
               <div class="card-header p-0 pt-1 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+                  
                   <li class="nav-item">
-                    <a class="nav-link " id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true"><i class="fa fa-plus-circle"></i> Nuevo</a>
+                    <a class="nav-link active" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false"><i class="fa fa-bars"></i> Documentos</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false"><i class="fa fa-list"></i> Listado</a>
-                  </li>
-                 
+                  
                 </ul>
               </div>
               <div class="card-body">
                 <div class="tab-content" id="custom-tabs-three-tabContent">
-                  <div class="tab-pane fade " id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
-                     
-                     <!-- FORM -->
-
-                <form action="procesos/compartirArchivo.php" method="post" enctype="multipart/form-data">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Titulo</label>
-                    <input type="text" class="form-control" name="titulo" placeholder="Titulo" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Descripción</label>
-                    <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" required>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputFile">Archivo</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="archivos" required>
-                        <label class="custom-file-label" for="exampleInputFile">...</label>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-success" >Compartir</button>
-                </div>
-              </form>
-
-                    <!-- FORM END -->
-                  </div>
-
                   <div class="tab-pane fade active show" id="custom-tabs-three-profile" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
                      
                     <!-- DATATABLES -->
+                    
                     <div class="container-fluid">
                       <div class="row">
                         <div class="col-12">
@@ -120,9 +83,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                       </div>
                     </div>
+                    
                     <!-- DATATABLES END -->
 
                   </div>
+              
                   
                 </div>
               </div>
@@ -152,6 +117,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div>
 <!-- ./wrapper -->
 
+<!-- Modal ASISTENCIAS INDIVIDUALES -->
+<div class="modal fade" id="modalAsistencias" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Asistencias</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+            <div id="asistencias"></div>
+						
+        </div>	
+						
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+					
+			</div>
+		</div>
+	</div>
+  <!-- Modal ASISTENCIAS INDIVIDUALES -->
+
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
@@ -164,40 +154,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-rowreorder/js/rowReorder.bootstrap4.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- datatables botones-->
+<script src="plugins/DataTablesBoton/Buttons-1.6.2/js/dataTables.buttons.min.js"></script>
+<script src="plugins/DataTablesBoton/JSZip-2.5.0/jszip.min.js"></script>
+<script src="plugins/DataTablesBoton/pdfmake-0.1.36/pdfmake.min.js"></script>
+<script src="plugins/DataTablesBoton/pdfmake-0.1.36/vfs_fonts.js"></script>
+<script src="plugins/DataTablesBoton/Buttons-1.6.2/js/buttons.html5.min.js"></script>
+<script src="plugins/DataTablesBoton/Buttons-1.6.2/js/buttons.print.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 </body>
 </html>
 
 <script type="text/javascript">
-
-  function eliminarDatos(id){
-		alertify.confirm('Eliminar un Archivo', '¿Seguro de eliminar este Archivo?', function(){ 
-
-			$.ajax({
-				type:"POST",
-				data:"idDoc=" + id,
-				url:"procesos/eliminarArchivoCompartido.php",
-				success:function(r){
-					if(r==1){
-            alertify.error("No se pudo eliminar...");
-					}else{
-            $('#iddatatable').load('tablas/tablaCompartir.php');
-						alertify.success("Eliminado con exito !");		
-					}
-				}
-			});
-
-		}
-		, function(){
-
-		});
-	}
-</script> 
-
-<script type="text/javascript">
 	$(document).ready(function(){
-		$('#iddatatable').load('tablas/tablaCompartir.php');
+		$('#iddatatable').load('tablas/tablaVerDocs.php');
 	});
 </script>
+
+
 

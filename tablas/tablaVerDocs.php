@@ -3,7 +3,7 @@ session_start();
 require_once "../php/conexion.php";
                             
                             $sql="SELECT *
-                            from archivos_compartidos";
+                            from archivos";
                             
                             $result=mysqli_query($conexion,$sql);
 
@@ -16,15 +16,11 @@ require_once "../php/conexion.php";
 						<th class="text-center">Titulo</th>
 						<th class="text-center">Descripción</th>
 						<th class="text-center">Fecha</th>
+						<th class="text-center">Usuario</th>
+						
 						<th class="text-center">Descargar</th>
-                        <?php
-                        if($_SESSION['nivel']==3){
-                        ?>
-						<th class="text-center">eliminar</th>
-                        <?php } ?>
-                    </tr>
+					</tr>
 			</thead>
-			
 		<tbody>
         <?php 
 			while ($mostrar=mysqli_fetch_row($result)) {
@@ -33,12 +29,10 @@ require_once "../php/conexion.php";
 					<td><?php echo $mostrar[1] ?></td>
 					<td><?php echo $mostrar[2] ?></td>
 					<td><?php echo $mostrar[3] ?></td>
-                    <td><a href="<?php echo $mostrar[4] ?>" download class="btn btn-success btn-raised"><i class="fa fa-download"></i></a></td>
-					<?php
-                    if($_SESSION['nivel']==3){
-                    ?>
-                    <td><a href="#!" class="btn btn-danger btn-raised " onclick="eliminarDatos('<?php echo $mostrar[0] ?>')"><i class="fa fa-trash"></i></a></td>
-                    <?php } ?>
+					<td><?php echo $mostrar[6] ?></td>
+                    
+                    <td><a href="<?php echo $mostrar[4] ?>" class="btn btn-info" download><i class="fa fa-download"></i></a></td>
+                
                 </tr>
 				<?php 
 			}
