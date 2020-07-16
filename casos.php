@@ -561,7 +561,7 @@ function agenda(id,existe){
 
 			$.ajax({
 				type:"POST",
-				data:"idCaso=" + id,
+				data:"idCaso = " + id,
 				url:"procesos/eliminarCaso.php",
 				success:function(r){
 					if(r==1){

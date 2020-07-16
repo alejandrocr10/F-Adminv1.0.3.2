@@ -80,7 +80,7 @@
           </li>
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Gestión de Casos
                 <i class="right fas fa-angle-left"></i>
@@ -113,7 +113,12 @@
                   <p>Recursos Compartidos</p>
                 </a>
               </li>
-          
+            <li class="nav-item">
+                <a href="reportes.php" class="nav-link ">
+                  <i class="nav-icon fas fa-copy "></i>
+                  <p>reportes</p>
+                </a>
+            </li>
           <li class="nav-item">
                 <a href="php/cerrarSesion.php" class="nav-link active">
                   <i class="nav-icon far fa-circle text-danger "></i>
@@ -175,6 +180,12 @@
             </ul>
           </li>  
           <li class="nav-item">
+                <a href="reportes.php" class="nav-link ">
+                  <i class="nav-icon fas fa-copy "></i>
+                  <p>reportes</p>
+                </a>
+            </li>
+          <li class="nav-item">
                 <a href="compartir.php" class="nav-link">
                   <i class="nav-icon far fa-plus-square"></i>
                   <p>Recursos Compartidos</p>
@@ -190,7 +201,7 @@
           <?php if($_SESSION['nivel'] == 1){ ?>
             <li class="nav-item has-treeview ">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Gestión de Casos
                 <i class="right fas fa-angle-left"></i>

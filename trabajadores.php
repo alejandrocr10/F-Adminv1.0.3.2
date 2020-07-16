@@ -280,9 +280,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				url:"procesos/registrarTrabajador.php",
 				success:function(r){
 					if(r==1){
-						alertify.success("Registrado con exito :D");
-					}else{
 						alertify.error("Fallo al Registrar :(");
+					}else{
+            $('#iddatatable').load('tablas/tablaTrabajadores.php');
+						alertify.success("Registrado con exito :D");
 					}
 				}
 			});
