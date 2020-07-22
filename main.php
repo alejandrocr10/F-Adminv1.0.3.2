@@ -1,4 +1,5 @@
-<?php session_start();?>
+<?php session_start(); require "php/comprobar.php";?>
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -15,6 +16,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <link rel="icon" href="img/F&Alogo2.png" type="image/x-icon">
+  <!-- alertify -->
+  <link rel="stylesheet" type="text/css" href="plugins/alertify/css/alertify.css">
+  <link rel="stylesheet" type="text/css" href="plugins/alertify/css/themes/bootstrap.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -65,22 +69,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="carousel-item active">
                 <img class="d-block w-100 " src="img/abg_uno.jpg" alt="First slide" width="400px" height="280px">
                 <div class="carousel-caption d-none d-md-block">
-                <h1 class=""> <b>Bienvenido!</b> Figueroa & Asociados,C.A</h1>
-                  <p>...</p>
+                <h1 class="display-4" style="background-color:#00000026;"> <b>Bienvenido!</b> Figueroa & Asociados,C.A</h1>
+                  
                   </div>
               </div>
               <div class="carousel-item">
                 <img class="d-block w-100 " src="img/abg_dos.jpg" alt="Second slide" width="400px" height="280px">
                 <div class="carousel-caption d-none d-md-block">
-                <h1 class=""> <b>Bienvenido!</b> Figueroa & Asociados,C.A</h1>
-                  <p>...</p>
+                <h1 class="display-4" style="background-color:#00000026;"> <b>Bienvenido!</b> Figueroa & Asociados,C.A</h1>
+                  
                 </div>
               </div>
               <div class="carousel-item">
                 <img class="d-block w-100 " src="img/abg_tres.jpeg" alt="Third slide" width="400px" height="280px">
                 <div class="carousel-caption d-none d-md-block">
-                <h1 class=""> <b>Bienvenido!</b> Figueroa & Asociados
-                  <p>...</p>
+                <h1 class="display-4" style="background-color:#00000026;"> <b>Bienvenido!</b> Figueroa & Asociados,C.A</h1>
+                  
                 </div>
               </div>
             </div>
@@ -197,14 +201,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="small-box bg-dark">
               <div class="inner">
                 <h4 style="font-size: 20px;">
-                  <strong>En desarrollo</strong>
+                  <strong>Reportes</strong>
                 </h4>
-                <p>Nuevo Modulo</p>
+                <p>Generar Reportes</p>
               </div>
               <div class="icon">
                 <i class="fa fa-list" aria-hidden="true"></i>
               </div>
-              <a href="#" class="small-box-footer">ir <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="reportes.php" class="small-box-footer">ir <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           </div>
@@ -374,7 +378,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="plugins/alertify/alertify.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 </body>
 </html>
+
+<?php if($_SESSION['valido'] == 0) : ?>
+
+<script> alertify.success('¡¡Bienvenido! A F&Admin!!');</script>
+
+<?php $_SESSION['valido'] = 3; endif;?>

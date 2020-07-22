@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start(); require "php/comprobar.php";?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -104,7 +104,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <option selected>Elegir...</option>
                                 <option value ="1">Abogado</option>
                                 <option value ="2">Administrador</option>
-                                <option value ="3">Tecnico</option>
+                                <?php if ($_SESSION['nivel'] == 3) :?>
+                                <option value ="3">Técnico</option>
+                                <?php endif;?>
                             </select>
                             </div>
                         </div> 
@@ -179,6 +181,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <option value ="1">Abogado</option>
                                 <option value ="2">Administrador</option>
                                 <option value ="3">Técnico</option>
+                                
                        </select>
                     </div>
             </div> 

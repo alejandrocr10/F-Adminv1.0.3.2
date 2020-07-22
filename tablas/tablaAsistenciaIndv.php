@@ -26,7 +26,7 @@ $result = mysqli_query($conexion, $sql);
 		<tbody>
         <?php 
 			while ($mostrar=mysqli_fetch_array($result)) {
-        $asis = ($mostrar["asistencia"]==1) ? "SI" : "NO";
+        $asis = ($mostrar["asistencia"]==1) ? "<i class='fa fa-check'></i>" : "<i class='fa fa-times'></i>";
 				?>
 				<tr>
 					<td><?php echo $mostrar['periodo'] ?></td>

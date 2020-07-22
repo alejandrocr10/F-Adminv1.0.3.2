@@ -15,8 +15,10 @@ $resultado = mysqli_query($conexion, $proceso);
         $_SESSION['usuario'] = $resultado[1].' '.$resultado[2];//DECLARACION DE VARIABLE DE SESION
         $_SESSION['nivel']=$nivel;   
         header("location:../index.php");
+        $_SESSION['valido'] = 0;
     }else{
-        header('location:../login.php');
+        header('location:../loginP.php');
+        $_SESSION['invalido'] = 1;
     }
 
 

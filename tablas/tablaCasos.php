@@ -32,9 +32,14 @@ require_once "../php/conexion.php";
 						<th class="text-center">Estado</th>
 						<th class="text-center">Documentos</th>
 						<?php
-                        if($_SESSION['nivel']==3 || $_SESSION['nivel']==1){
+                        if($_SESSION['nivel']==3){
                         ?>
 						<th class="text-center">Editar</th>
+						<?php } ?>
+						<?php
+                        if($_SESSION['nivel']==1){
+                        ?>
+						<th class="text-center">Actualizar</th>
 						<?php } ?>
 						<?php
                         if($_SESSION['nivel']==3){
